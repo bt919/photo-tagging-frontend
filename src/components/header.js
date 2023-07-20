@@ -4,7 +4,7 @@ import Doyle from "../images/doyle.webp";
 import Spec from "../images/spec.webp";
 import Sikorsky from "../images/sikorsky.webp";
 
-const Header = () => {
+const Header = (props) => {
   const images = [Dorian, Yanagi, Doyle, Spec, Sikorsky];
   const names = ["Dorian", "Yanagi", "Doyle", "Spec", "Sikorsky"];
 
@@ -19,8 +19,16 @@ const Header = () => {
               alt={`${names[index]} from the anime Baki`}
               draggable="false"
             ></img>
-            <p>{names[index]}</p>
-            <p className="eliminate">X</p>
+            <p className={props.villains[index] === 0 ? "" : "cross"}>
+              {names[index]}
+            </p>
+            <p
+              className={`eliminate ${
+                props.villains[index] === 0 ? "" : "cross"
+              }`}
+            >
+              X
+            </p>
           </div>
         );
       })}
