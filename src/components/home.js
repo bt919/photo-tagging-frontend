@@ -5,7 +5,11 @@ const Home = (props) => {
   return (
     <div className="home">
       <Header villains={props.villains}></Header>
-      <Background eliminateVillain={props.eliminateVillain}></Background>
+      <Background
+        eliminateVillain={props.eliminateVillain}
+        villains={props.villains}
+        setStart={props.setStart}
+      ></Background>
     </div>
   );
 };

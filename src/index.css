@@ -115,3 +115,66 @@ p.eliminate.cross {
   visibility: visible;
   text-decoration: none;
 }
+
+.join {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  color: var(--main-color);
+}
+
+form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.form-group {
+  margin: 5px;
+}
+
+button {
+  padding: 8px;
+  margin-left: 10px;
+  border-radius: 8px;
+  border: 3px solid var(--bg-color);
+  background-color: var(--main-color);
+  color: var(--bg-color);
+}
+
+button:hover {
+  background-color: var(--sub-color);
+}
+
+button:active {
+  background-color: var(--sub-alt-color);
+  border: 3px solid var(--main-color);
+  color: var(--main-color);
+}
+
+input[type="text"] {
+  padding: 5px;
+  margin-left: 5px;
+  border: none;
+  outline: none;
+  background-color: var(--sub-color);
+  color: var(--text-color);
+}
+
+input[type="text"]::placeholder {
+  color: var(--sub-alt-color);
+}
+
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.leaderboard h3 {
+  margin: 30px 0px 20px 0px;
+}

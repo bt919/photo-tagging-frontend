@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import background from "../images/background.png";
 
@@ -17,9 +18,16 @@ const Background = (props) => {
   // const yanagi = [0.84, 0.81];
   // const spec = [0.66, 0.58];
   // const sikorsky = [0.07, 0.65];
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (props.villains.indexOf(0) === -1) navigate("/enter");
+  }, [props.villains]);
 
   const handleClick = () => {
     setReady(true);
+    props.setStart(Date.now());
+    console.log(Date.now());
   };
 
   const handleImageClick = (e) => {
