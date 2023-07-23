@@ -6,7 +6,7 @@ const Form = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!props.time) navigate("/");
+    if (!props.time) navigate("/photo-tagging-frontend");
   }, []);
 
   const handleChange = (e) => {
@@ -40,11 +40,11 @@ const Form = (props) => {
         options
       );
     }
-    navigate("/leaderboard");
+    navigate("/photo-tagging-frontend/leaderboard");
   };
 
   const handleSkip = () => {
-    navigate("/leaderboard");
+    navigate("/photo-tagging-frontend/leaderboard");
   };
 
   return (

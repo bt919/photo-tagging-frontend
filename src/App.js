@@ -28,7 +28,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path="/"
+            path="/photo-tagging-frontend"
             element={
               <Home
                 villains={villains}
@@ -38,11 +38,11 @@ function App() {
             }
           ></Route>
           <Route
-            path="/enter"
+            path="/photo-tagging-frontend/enter"
             element={<Form time={(end - start) / 1000}></Form>}
           ></Route>
           <Route
-            path="/leaderboard"
+            path="photo-tagging-frontend/leaderboard"
             element={<Leaderboard></Leaderboard>}
           ></Route>
         </Routes>

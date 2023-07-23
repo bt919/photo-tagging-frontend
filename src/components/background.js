@@ -9,7 +9,8 @@ const Background = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (props.villains.indexOf(0) === -1) navigate("/enter");
+    if (props.villains.indexOf(0) === -1)
+      navigate("/photo-tagging-frontend/enter");
   }, [props.villains]);
 
   const handleClick = () => {
