@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/photo-tagging-frontend/static/css/main.ed8207ae.css",
-    "main.js": "/photo-tagging-frontend/static/js/main.84965fe9.js",
+    "main.js": "/photo-tagging-frontend/static/js/main.0d6e1717.js",
     "static/media/background.png": "/photo-tagging-frontend/static/media/background.f53a4f6c9a1b2f944b7a.png",
     "static/media/spec.webp": "/photo-tagging-frontend/static/media/spec.070b9ec000ef23bd610d.webp",
     "static/media/dorian.webp": "/photo-tagging-frontend/static/media/dorian.5094a5f24f48a2bce9e3.webp",
@@ -10,10 +10,10 @@
     "static/media/sikorsky.webp": "/photo-tagging-frontend/static/media/sikorsky.935410327c8eb2bd7dc4.webp",
     "index.html": "/photo-tagging-frontend/index.html",
     "main.ed8207ae.css.map": "/photo-tagging-frontend/static/css/main.ed8207ae.css.map",
-    "main.84965fe9.js.map": "/photo-tagging-frontend/static/js/main.84965fe9.js.map"
+    "main.0d6e1717.js.map": "/photo-tagging-frontend/static/js/main.0d6e1717.js.map"
   },
   "entrypoints": [
     "static/css/main.ed8207ae.css",
-    "static/js/main.84965fe9.js"
+    "static/js/main.0d6e1717.js"
   ]
 }
