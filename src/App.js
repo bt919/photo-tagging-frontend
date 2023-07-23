@@ -12,7 +12,6 @@ function App() {
 
   useEffect(() => {
     if (villains.indexOf(0) === -1) setEnd(Date.now());
-    console.log({ start, end });
   }, [villains]);
 
   const eliminateVillain = (index) => {

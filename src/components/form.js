@@ -1,23 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Form = (props) => {
   const [name, setName] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!props.time) navigate("/");
+  }, []);
+
   const handleChange = (e) => {
     setName(e.target.value);
-    console.log(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (name.trim().length === 0) {
-      console.log("anonymous");
-      console.log(props.time);
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: "anonymous", record: props.time }),
+      };
+      await fetch("http://localhost:5000/player", options);
     } else {
-      console.log(name);
-      console.log(props.time);
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: name, record: props.time }),
+      };
+      await fetch("http://localhost:5000/player", options);
     }
     navigate("/leaderboard");
   };
@@ -36,7 +51,7 @@ const Form = (props) => {
             type="text"
             id="name"
             name="name"
-            placeholder="anonymous"
+            placeholder="Enter as anonymous"
             value={name}
             onChange={handleChange}
           ></input>

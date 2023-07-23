@@ -1,19 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Leaderboard = () => {
   const [scores, setScores] = useState([]);
 
+  useEffect(() => {
+    const getScores = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/player");
+        const json = await response.json();
+        setScores(json["message"]);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    getScores();
+  }, []);
+
   return (
     <div className="leaderboard">
       <h3>Leaderboard</h3>
-      <p>1) 2.234 seconds by Bob on July 2, 2023</p>
-      <p>2) 2.234 seconds by Bob on July 2, 2023</p>
-      <p>3) 2.234 seconds by Bob on July 2, 2023</p>
-      <p>4) 2.234 seconds by Bob on July 2, 2023</p>
       {scores.map((score, index) => {
         return (
           <p key={index}>
-            {index}. {score.score} by {score.name} on {score.date}
+            {index + 1}) {score["record"]["$numberDecimal"]} seconds by{" "}
+            {score["name"]} on {new Date(score.date).toLocaleString()}
           </p>
         );
       })}
