@@ -6,7 +6,9 @@ const Leaderboard = () => {
   useEffect(() => {
     const getScores = async () => {
       try {
-        const response = await fetch("http://localhost:5000/player");
+        const response = await fetch(
+          "https://photo-tagging-api-production.up.railway.app/player"
+        );
         const json = await response.json();
         setScores(json["message"]);
       } catch (err) {

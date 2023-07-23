@@ -26,7 +26,7 @@ const Background = (props) => {
       e.target.offsetHeight;
 
     const response = await fetch(
-      `http://localhost:5000/coordinate?x=${x}&y=${y}`
+      `https://photo-tagging-api-production.up.railway.app/coordinate?x=${x}&y=${y}`
     );
     const json = await response.json();
 

@@ -23,7 +23,10 @@ const Form = (props) => {
         },
         body: JSON.stringify({ name: "anonymous", record: props.time }),
       };
-      await fetch("http://localhost:5000/player", options);
+      await fetch(
+        "https://photo-tagging-api-production.up.railway.app/player",
+        options
+      );
     } else {
       const options = {
         method: "POST",
@@ -32,7 +35,10 @@ const Form = (props) => {
         },
         body: JSON.stringify({ name: name, record: props.time }),
       };
-      await fetch("http://localhost:5000/player", options);
+      await fetch(
+        "https://photo-tagging-api-production.up.railway.app/player",
+        options
+      );
     }
     navigate("/leaderboard");
   };
